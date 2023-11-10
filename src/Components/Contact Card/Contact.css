@@ -1,0 +1,17 @@
+.githubbutton {
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+  }
+  
+  .githubbutton:hover {
+    background-color: #4078c0; /* New background color on hover */
+    color: #fff; /* New text color on hover */
+  }
+  
+  .linkedinbutton {
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+  }
+  
+  .linkedinbutton:hover {
+    background-color: #005f91; /* New background color on hover */
+    color: #fff; /* New text color on hover */
+  }
