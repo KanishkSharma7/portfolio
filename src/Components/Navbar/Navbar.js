@@ -86,7 +86,7 @@ const Navbar = ({ scrollToSection }) => {
                 borderRadius: "20px",
                 transition: "box-shadow 0.3s",
                 padding: "1%",
-                backgroundColor: "transparent", // Initial background color
+                backgroundColor: "rgb (0, 128, 128)", // Initial background color
                 color: "white", // Initial text color
                 ":hover": {
                   boxShadow: "0px 0px 20px 0px white",

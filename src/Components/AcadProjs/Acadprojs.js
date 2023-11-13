@@ -6,7 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function Acadprojs() {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState("work_1");
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -16,29 +16,29 @@ function Acadprojs() {
     {
       id: "work_1",
       title: "Ethereum-based NFT Marketplace",
-      description: "Some cool PD here",
+      description: `I designed and implemented an Ethereum-based NFT Marketplace, taking charge of both the frontend development and the creation of smart contracts. The project involved utilizing the Solidity programming language and adhering to ERC-721 standards to ensure compatibility with the Ethereum blockchain. This comprehensive approach not only covered the user interface but also implemented the underlying smart contracts governing the creation, ownership, and transfer of non-fungible tokens (NFTs). This initiative contributed to the creation of a robust and decentralized marketplace tailored for the unique digital asset ecosystem.`,
     },
     {
       id: "work_2",
       title: "Blockchain-based Chain of Custody Form ",
-      description: "Some cool PD here",
+      description: `I developed a digital equivalent of a chain of custody form using my own blockchain, focusing on enhancing the traditional process. This project aimed to create a secure and transparent digital ledger, ensuring a tamper-resistant record of the custody journey. Each transaction within the blockchain represented a step in the custody process, fostering data security, trust, and accountability. The development involved the implementation of smart contracts, consensus mechanisms, and cryptographic principles to establish a robust and decentralized chain of custody solution. The overarching goal was to showcase the transformative potential of blockchain technology in improving established processes within custody management.`,
     },
     {
       id: "work_3",
       title: "Ball Tracking in Sports using Deep Learning ",
-      description: "Some cool PD here",
+      description: `I successfully developed a cutting-edge real-time tennis ball tracking system employing deep learning techniques. This project was designed to elevate sports analysis, coaching, and broadcasting by addressing challenges related to occlusions and fast ball movement. The system not only enhances the understanding of sports events but also contributes to an elevated level of enjoyment for viewers. The implementation involved advanced deep learning algorithms that enabled accurate tracking of the tennis ball, even in scenarios where occlusions and rapid ball movement traditionally posed challenges. This innovative solution signifies a significant advancement in sports technology, offering potential applications across various sporting contexts.`,
     },
-    {
-      id: "work_4",
-      title:
-        "Social media application using the ethereum blockchain and Next JS ",
-      description: "Some cool PD here",
-    },
+    // {
+    //   id: "work_4",
+    //   title:
+    //     "Social media application using the ethereum blockchain and Next JS ",
+    //   description: "Some cool PD here",
+    // },
   ];
   return (
     <div
       style={{
-        backgroundColor: "#2c3e50",
+        backgroundColor: "transparent",
         border: "3px solid white",
         borderRadius: "20px",
         marginTop: "5.5%",
@@ -55,7 +55,7 @@ function Acadprojs() {
             expanded={expanded === experience.id}
             onChange={handleChange(experience.id)}
             sx={{
-              backgroundColor: "#2c3e50",
+              backgroundColor: "transparent",
               border: "3px solid white",
               marginTop: "3%",
               borderRadius: "20px",

@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import Button from "@mui/material/Button";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
@@ -14,7 +14,7 @@ function About() {
 
   const downloadButtonStyles = {
     ...buttonStyles,
-    backgroundColor: "#2c3e50",
+    backgroundColor: "transaparent",
     color: "white",
     marginRight: "5%",
     ":hover": {
@@ -40,7 +40,7 @@ function About() {
     <>
       <div
         style={{
-          backgroundColor: "#2c3e50",
+          backgroundColor: "transparent",
           border: "3px solid white",
           borderRadius: "20px",
           marginTop: "5.5%",
@@ -69,7 +69,7 @@ function About() {
       </div>
       <div
         style={{
-          backgroundColor: "#2c3e50",
+          backgroundColor: "transparent",
           border: "3px solid white",
           borderRadius: "20px",
           marginTop: "5.5%",

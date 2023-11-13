@@ -20,11 +20,11 @@ function App() {
   };
 
   return (
-    <div className="App" style={{ backgroundColor: "rgb(27, 27, 52)" }}>
+    <div className="App" >
       <CssBaseline />
       <Navbar scrollToSection={scrollToSection} />
 
-      <Container id="contact" height="100vh">
+      <Container id="contact" height="100%">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} md={5}>
             <Contact />
@@ -35,15 +35,15 @@ function App() {
         </Grid>
       </Container>
 
-      <Container id="experience">
+      <Container id="experience" >
         <Experience />
       </Container>
 
-      <Container id="workSample">
+      <Container id="worksample" >
         <WorkSample />
       </Container>
 
-      <Container id="acadProjects">
+      <Container id="academicprojects" >
         <Acadprojs />
       </Container>
     </div>

@@ -22,7 +22,7 @@ function Contact() {
 
   const githubButtonStyles = {
     ...buttonStyles,
-    backgroundColor: "#2c3e50",
+    backgroundColor: "transparent",
     color: "white",
     marginRight: "5%",
     ":hover": {
@@ -33,7 +33,7 @@ function Contact() {
 
   const linkedinButtonStyles = {
     ...buttonStyles,
-    backgroundColor: "#2c3e50",
+    backgroundColor: "transparent",
     color: "white",
     ":hover": {
       backgroundColor: "white",
@@ -45,9 +45,9 @@ function Contact() {
     <div style={{ marginTop: "7.5%" }}>
       <Card
         sx={{
-          width: "90%",
-          backgroundColor: "#2c3e50",
-          padding: "5%",
+          width: "100%",
+          backgroundColor: "transparent",
+          padding: "2%",
           border: "3px solid white",
           borderRadius: "20px",
         }}
@@ -64,7 +64,7 @@ function Contact() {
             <img
               src={profileimage}
               style={{
-                width: "100%",
+                width: "73%",
                 borderRadius: "50%",
                 border: "3px solid white",
               }}
@@ -119,7 +119,7 @@ function Contact() {
               display: "flex",
               justifyContent: "flex-start",
               alignItems: "center",
-              paddingTop: "20%"
+              // paddingTop: "20%"
             }}
           >
             <Button

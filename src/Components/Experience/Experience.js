@@ -6,7 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function Experience() {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState("work_1");
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -42,7 +42,7 @@ function Experience() {
   return (
     <div
       style={{
-        backgroundColor: "#2c3e50",
+        backgroundColor: "transparent",
         border: "3px solid white",
         borderRadius: "20px",
         marginTop: "5.5%",
@@ -59,7 +59,7 @@ function Experience() {
             expanded={expanded === experience.id}
             onChange={handleChange(experience.id)}
             sx={{
-              backgroundColor: "#2c3e50",
+              backgroundColor: "transparent",
               border: "3px solid white",
               marginTop: "3%",
               borderRadius: "20px",

@@ -7,7 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Button from "@mui/material/Button";
 
 function WorkSample() {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState("work_1");
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -23,7 +23,7 @@ function WorkSample() {
 
   const checkButtonStyles = {
     ...buttonStyles,
-    backgroundColor: "teal",
+    backgroundColor: "transaparent",
     color: "white",
     marginRight: "5%",
     ":hover": {
@@ -76,7 +76,7 @@ function WorkSample() {
     <>
       <div
         style={{
-          backgroundColor: "#2c3e50",
+          backgroundColor: "transaparent",
           border: "3px solid white",
           borderRadius: "20px",
           marginTop: "5.5%",
@@ -93,7 +93,7 @@ function WorkSample() {
               expanded={expanded === worksample.id}
               onChange={handleChange(worksample.id)}
               sx={{
-                backgroundColor: "#2c3e50",
+                backgroundColor: "transparent",
                 border: "3px solid white",
                 marginTop: "3%",
                 borderRadius: "20px",
