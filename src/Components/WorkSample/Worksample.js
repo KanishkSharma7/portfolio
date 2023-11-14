@@ -32,7 +32,6 @@ function WorkSample() {
     },
   };
 
-
   const professional_projects = [
     {
       id: "work_1",
@@ -83,7 +82,18 @@ function WorkSample() {
           padding: "5%",
         }}
       >
-        <Typography variant="h4" color="white">
+        <Typography
+          variant="h4"
+          color="white"
+          sx={{
+            "&.MuiTypography-root": {
+              fontSize: "1.8rem", // Default font size for title
+              "@media (max-width:600px)": {
+                fontSize: "1rem", // Adjust font size for smaller screens
+              },
+            },
+          }}
+        >
           Check out my work!
         </Typography>
         <div>
@@ -115,7 +125,18 @@ function WorkSample() {
                 id={`${worksample.id}-header`}
               >
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <Typography color="white" variant="h6">
+                  <Typography
+                    color="white"
+                    variant="h6"
+                    sx={{
+                      "&.MuiTypography-root": {
+                        fontSize: "1.2rem", // Default font size for title
+                        "@media (max-width:600px)": {
+                          fontSize: "0.85rem", // Adjust font size for smaller screens
+                        },
+                      },
+                    }}
+                  >
                     {worksample.title}
                   </Typography>
                 </div>
@@ -124,7 +145,7 @@ function WorkSample() {
                 <Typography color="white">{worksample.description}</Typography>
                 <Button
                   size="small"
-                  onClick={() => window.open(worksample.link, '_blank')}
+                  onClick={() => window.open(worksample.link, "_blank")}
                   sx={checkButtonStyles}
                   className="checkbutton"
                 >

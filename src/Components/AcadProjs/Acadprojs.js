@@ -45,7 +45,18 @@ function Acadprojs() {
         padding: "5%",
       }}
     >
-      <Typography variant="h4" color="white">
+      <Typography
+        variant="h4"
+        color="white"
+        sx={{
+          "&.MuiTypography-root": {
+            fontSize: "1.8rem", // Default font size for title
+            "@media (max-width:600px)": {
+              fontSize: "1rem", // Adjust font size for smaller screens
+            },
+          },
+        }}
+      >
         My Academic Projects!
       </Typography>
       <div>
@@ -77,7 +88,18 @@ function Acadprojs() {
               id={`${experience.id}-header`}
             >
               <div style={{ display: "flex", flexDirection: "column" }}>
-                <Typography color="white" variant="h6">
+                <Typography
+                  color="white"
+                  variant="h6"
+                  sx={{
+                    "&.MuiTypography-root": {
+                      fontSize: "1.2rem", // Default font size for title
+                      "@media (max-width:600px)": {
+                        fontSize: "0.85rem", // Adjust font size for smaller screens
+                      },
+                    },
+                  }}
+                >
                   {experience.title}
                 </Typography>
               </div>
