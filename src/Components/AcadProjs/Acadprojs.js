@@ -70,6 +70,7 @@ function Acadprojs() {
               border: "3px solid white",
               marginTop: "3%",
               borderRadius: "20px",
+              padding: "2%",
               ":first-of-type": {
                 borderTopLeftRadius: "20px",
                 borderTopRightRadius: "20px",
@@ -105,7 +106,7 @@ function Acadprojs() {
               </div>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography color="white">{experience.description}</Typography>
+              <Typography color="white" sx= {{ textAlign: "justify" }}>{experience.description}</Typography>
             </AccordionDetails>
           </Accordion>
         ))}

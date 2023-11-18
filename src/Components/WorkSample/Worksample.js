@@ -5,6 +5,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Button from "@mui/material/Button";
+import { Grid } from '@mui/material';
 
 function WorkSample() {
   const [expanded, setExpanded] = useState("work_1");
@@ -107,6 +108,7 @@ function WorkSample() {
                 border: "3px solid white",
                 marginTop: "3%",
                 borderRadius: "20px",
+                padding: "2%",
                 ":first-of-type": {
                   borderTopLeftRadius: "20px",
                   borderTopRightRadius: "20px",
@@ -142,7 +144,7 @@ function WorkSample() {
                 </div>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography color="white">{worksample.description}</Typography>
+                <Typography color="white" sx= {{ textAlign: "justify" }}>{worksample.description}</Typography>
                 <Button
                   size="small"
                   onClick={() => window.open(worksample.link, "_blank")}

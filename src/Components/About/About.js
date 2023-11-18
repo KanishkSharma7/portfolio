@@ -63,7 +63,7 @@ function About() {
         >
           About Me
         </Typography>
-        <Typography variant="body1" color="white">
+        <Typography variant="body1" color="white" sx={{ textAlign: "justify" }}>
           Greetings! I'm Kanishk Sharma, a passionate software developer
           currently pursuing a Master's in Computer Science from Arizona State
           University. With a fervor for blockchains, digital forensics, and web3

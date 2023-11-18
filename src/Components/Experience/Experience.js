@@ -89,6 +89,7 @@ function Experience() {
               border: "3px solid white",
               marginTop: "3%",
               borderRadius: "20px",
+              padding: "2%",
               "&:first-of-type": {
                 borderTopLeftRadius: "20px",
                 borderTopRightRadius: "20px",
@@ -149,7 +150,7 @@ function Experience() {
               </div>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography className="desc" color="white">
+              <Typography className="desc" color="white" sx= {{ textAlign: "justify" }}>
                 {experience.description}
               </Typography>
             </AccordionDetails>
