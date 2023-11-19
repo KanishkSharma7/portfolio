@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
@@ -38,19 +38,38 @@ function Contact() {
       color: "black",
     },
   };
+  const [hover, setHover] = useState(false);
 
+  const sectionStyles = {
+    base: {
+      backgroundColor: "transparent",
+      border: "3px solid white",
+      borderRadius: "20px",
+      padding: "2%",
+      height: "100%", // Set a fixed height to match About component
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      transition: "transform 0.3s, box-shadow 0.3s",
+      marginTop: "-4%"
+    },
+    hover: {
+      transform: "scale(1.05)",
+      boxShadow: "0px 0px 20px 0px rgba(255, 255, 255, 0.5)",
+    },
+  };
+
+  const applyHover = (isHovering) => {
+    setHover(isHovering);
+  };
   return (
     <Card
       sx={{
-        backgroundColor: "transparent",
-        border: "3px solid white",
-        borderRadius: "20px",
-        padding: "2%",
-        height: "100%", // Set a fixed height to match About component
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
+        ...sectionStyles.base,
+        ...(hover && sectionStyles.hover), // Apply hover styles conditionally
       }}
+      onMouseEnter={() => applyHover(true)}
+      onMouseLeave={() => applyHover(false)}
     >
       <CardContent style={{ textAlign: "center" }}>
         <img
@@ -60,6 +79,7 @@ function Contact() {
             borderRadius: "50%",
             border: "3px solid white",
             marginBottom: "20px",
+            marginTop: "4%"
           }}
           alt="profile pic"
         />
@@ -69,6 +89,8 @@ function Contact() {
             color="white"
             gutterBottom
             style={{ textAlign: "left", fontSize: "3.5rem" }}
+            fontFamily="Raleway"
+            fontWeight="800"
           >
             Kanishk Sharma
           </Typography>
@@ -91,6 +113,7 @@ function Contact() {
               variant="body1"
               color="white"
               style={{ fontSize: "1.5rem" }}
+              fontFamily="Raleway"
             >
               Tempe, AZ, USA
             </Typography>
@@ -114,6 +137,7 @@ function Contact() {
               variant="body1"
               color="white"
               style={{ fontSize: "1.5rem" }}
+              fontFamily="Raleway"
             >
               (623)-698-5877
             </Typography>
@@ -137,6 +161,7 @@ function Contact() {
               variant="body1"
               color="white"
               style={{ fontSize: "1.5rem" }}
+              fontFamily="Raleway"
             >
               ksharm72@asu.edu
             </Typography>
@@ -158,7 +183,7 @@ function Contact() {
             }
           >
             <GitHubIcon style={{ marginRight: "8px" }} />
-            <Typography>Github</Typography>
+            <Typography fontFamily="Raleway">Github</Typography>
           </Button>
           <Button
             size="small"
@@ -171,7 +196,7 @@ function Contact() {
             }
           >
             <LinkedInIcon style={{ marginRight: "8px" }} />
-            <Typography>Linkedin</Typography>
+            <Typography fontFamily="Raleway">Linkedin</Typography>
           </Button>
         </div>
       </CardContent>

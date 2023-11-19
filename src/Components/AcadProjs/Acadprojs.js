@@ -53,9 +53,11 @@ function Acadprojs() {
           sx={{
             "&.MuiTypography-root": {
               fontSize: "1.8rem", // Default font size for title
+              fontFamily: "Raleway",
               "@media (max-width:600px)": {
                 fontSize: "1rem", // Adjust font size for smaller screens
               },
+              
             },
           }}
         >
@@ -94,6 +96,7 @@ function Acadprojs() {
                   <Typography
                     color="white"
                     variant="h6"
+                    fontFamily="Raleway"
                     sx={{
                       "&.MuiTypography-root": {
                         fontSize: "1.2rem", // Default font size for title
@@ -108,7 +111,7 @@ function Acadprojs() {
                 </div>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography color="white" sx={{ textAlign: "justify" }}>
+                <Typography color="white" sx={{ textAlign: "justify" }} fontFamily="Raleway">
                   {experience.description}
                 </Typography>
               </AccordionDetails>

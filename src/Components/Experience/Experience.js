@@ -73,6 +73,7 @@ function Experience() {
         variant="h3"
         color="white"
         sx={{ textAlign: "center", marginBottom: "5%" }}
+        fontFamily="Raleway"
       >
         Work Experience
       </Typography>
@@ -106,6 +107,7 @@ function Experience() {
                       variant="h6"
                       color="white"
                       sx={{ textAlign: "left", marginRight: "8px" }}
+                      fontFamily="Raleway"
                     >
                       {experience.title}
                     </Typography>
@@ -144,18 +146,10 @@ function Experience() {
                     variant="body2"
                     color="white"
                     sx={{ marginBottom: "8px", textAlign: "left" }}
+                    fontFamily="Raleway"
                   >
                     {experience.dates}
                   </Typography>
-                  <Collapse
-                    in={expanded === experience.id}
-                    timeout="auto"
-                    unmountOnExit
-                  >
-                    <Typography color="white" sx={{ textAlign: "justify" }}>
-                      {experience.description}
-                    </Typography>
-                  </Collapse>
                 </CardContent>
               </Card>
             </TimelineContent>

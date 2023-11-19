@@ -8,13 +8,14 @@ import {
   CardContent,
   CardMedia,
 } from "@mui/material";
-import { Container } from "@mui/system";
+import { Container, styled } from "@mui/system";
 import artsmiley from "../../Images/artsmiley.png";
 import handm from "../../Images/handm.png";
 import suzuki from "../../Images/suzuki.png";
 import techt from "../../Images/techt.png";
 import fixl from "../../Images/fixl.png";
 import fondos from "../../Images/fondos.png";
+import Acadprojs from "../AcadProjs/Acadprojs";
 
 
 function WorkSample() {
@@ -42,6 +43,29 @@ function WorkSample() {
       color: "black",
     },
   };
+  const CustomCard = styled(Card)(({ theme }) => ({
+    border: "2px solid white",
+    borderRadius: "20px",
+    backgroundColor: "transparent",
+    position: "relative",
+    transition: "transform 0.3s",
+    "&:hover": {
+      transform: "scale(1.05)",
+      boxShadow: "0px 0px 20px 0px rgba(255, 255, 255, 0.5)",
+    },
+  }));
+
+  const CustomButton = styled(Button)(({ theme }) => ({
+    color: "white",
+    border: "1px solid white",
+    marginTop: "7.5%",
+    fontFamily: "Raleway",
+    transition: "background-color 0.3s, color 0.3s",
+    "&:hover": {
+      backgroundColor: "white",
+      color: "black",
+    },
+  }));
 
   const toggleExpanded = (panelId) => {
     if (expanded === panelId) {
@@ -56,7 +80,7 @@ function WorkSample() {
   const professional_projects = [
     {
       id: "work_1",
-      title: "ArtSmiley - A digital art gallery",
+      title: "ArtSmiley",
       description: `ArtSmiley is a sophisticated online art gallery that seamlessly connects buyers, curators, and artists in a collaborative space for art transactions. The platform boasts a multi-level user interface catering to roles like admin, superadmin, curator, artist, and buyer. As a key contributor to the project, my focus centered on crafting intuitive user interfaces for the superadmin, curator, and user panels, leveraging the power of React JS and Material UI. Moreover, I played a pivotal role in developing robust APIs, ensuring seamless functionality across various panels. The project is currently live, providing an engaging and dynamic environment for art enthusiasts worldwide.`,
       link: "https://artsmiley.com/",
       imageUrl: artsmiley,
@@ -109,13 +133,14 @@ function WorkSample() {
               textAlign: "center",
               marginBottom: "2%",
             }}
+            fontFamily="Raleway"
           >
             Check out my work!
           </Typography>
         </Grid>
         {professional_projects.map((worksample) => (
           <Grid key={worksample.id} item xs={12} sm={6} md={4}>
-            <Card
+            <CustomCard
               sx={{
                 border: "2px solid white",
                 borderRadius: "20px",
@@ -143,6 +168,7 @@ function WorkSample() {
                     variant="h5"
                     component="div"
                     sx={{ color: "white" }}
+                    fontFamily="Raleway"
                   >
                     {worksample.title}
                   </Typography>
@@ -150,6 +176,7 @@ function WorkSample() {
                     variant="body2"
                     color="text.secondary"
                     sx={{ color: "white", textAlign: "justify" }}
+                    fontFamily="Raleway"
                   >
                     {expanded === worksample.id
                       ? worksample.description // Show full description if expanded
@@ -170,19 +197,20 @@ function WorkSample() {
                   </Typography>
                 </div>
                 <CardActions>
-                  <Button
+                  <CustomButton
                     size="small"
                     onClick={() => window.open(worksample.link, "_blank")}
-                    sx={{ color: "white", border: "1px solid white", marginTop: "7.5%" }}
+                    sx={{ color: "white", border: "1px solid white", marginTop: "7.5%", fontFamily: "Raleway" }}
                   >
                     Check it out
-                  </Button>
+                  </CustomButton>
                 </CardActions>
               </CardContent>
-            </Card>
+            </CustomCard>
           </Grid>
         ))}
       </Grid>
+      <Acadprojs />
     </Container>
   );
 }

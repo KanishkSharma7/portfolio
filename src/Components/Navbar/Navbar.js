@@ -19,10 +19,10 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { text: "About Me", path: "/portfolio" },
+    { text: "Home", path: "/portfolio" },
+    { text: "About Me", path: "/about" },
     { text: "Experience", path: "/experience" },
     { text: "Work Sample", path: "/worksample" },
-    { text: "Academic Projects", path: "/academicprojects" },
   ];
 
   const list = (
@@ -89,7 +89,12 @@ const Navbar = () => {
                 },
               }}
             >
-              <Typography variant="button" sx={{ textTransform: "capitalize" }}>
+              <Typography
+                variant="button"
+                sx={{ textTransform: "capitalize" }}
+                fontFamily="Raleway"
+                fontSize="1.2rem"
+              >
                 {menuItem.text}
               </Typography>
             </Button>

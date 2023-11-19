@@ -17,6 +17,7 @@ function PersonalInfo() {
           minHeight: `calc(100vh - 120px)`,
           overflow: "hidden",
           display: "flex",
+          marginTop: "3%"
         }}
       >
         <Grid item xs={12} md={6}>

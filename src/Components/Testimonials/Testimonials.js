@@ -50,6 +50,7 @@ const TestimonialSlider = () => {
         variant="h3"
         color="white"
         sx={{ textAlign: "center", marginTop: "5%", marginBottom: "2.5%" }}
+        fontFamily="Raleway"
       >
         Client Testimonials
       </Typography>
@@ -77,12 +78,12 @@ const TestimonialSlider = () => {
               >
                 <CardContent sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                   <div>
-                    <Typography variant="body1" color="white">
+                    <Typography variant="body1" color="white" fontFamily="Raleway">
                       {testimonial.quote}
                     </Typography>
                   </div>
                   <div style={{ marginTop: "auto" }}>
-                    <Typography variant="subtitle2" color="white">
+                    <Typography variant="subtitle2" color="white" fontFamily="Raleway">
                       - {testimonial.name}
                     </Typography>
                   </div>

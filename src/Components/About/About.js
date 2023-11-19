@@ -31,6 +31,31 @@ function About() {
     },
   };
 
+  const sectionStyles = {
+    base: {
+      backgroundColor: "transparent",
+      border: "3px solid white",
+      borderRadius: "20px",
+      padding: "5%",
+      marginBottom: "5.5%",
+      transition: "transform 0.3s, box-shadow 0.3s",
+      overflow: "hidden", // Prevent content overflow
+    },
+    hover: {
+      transform: "scale(1.0025)",
+      boxShadow: "0px 0px 20px 0px rgba(255, 255, 255, 0.4)",
+    },
+  };
+
+  const applyHover = (e, hover) => {
+    e.currentTarget.style.transform = hover
+      ? sectionStyles.hover.transform
+      : "scale(1)";
+    e.currentTarget.style.boxShadow = hover
+      ? sectionStyles.hover.boxShadow
+      : "0px 0px 0px 0px rgba(255, 255, 255, 0)";
+  };
+
   const skillsData = [
     {
       name: "MongoDB",
@@ -79,26 +104,23 @@ function About() {
     link.download = "Kanishk_Sharma_Resume.pdf";
     link.click();
   };
-
+  
   return (
     <>
       <div
         style={{
-          backgroundColor: "transparent",
-          border: "3px solid white",
-          borderRadius: "20px",
-          padding: "5%",
-          height: "100%", // Set a fixed height to match Contact component
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
+          ...sectionStyles.base,
+          height: "fit-content", // Adjust height based on content
         }}
+        onMouseEnter={(e) => applyHover(e, true)}
+        onMouseLeave={(e) => applyHover(e, false)}
       >
         <Typography
           color="white"
           variant="h4"
           marginBottom="2.5%"
           align="center"
+          fontFamily="Raleway"
           sx={{
             "&.MuiTypography-root": {
               fontSize: "1.8rem", // Default font size for title
@@ -111,7 +133,7 @@ function About() {
         >
           About Me
         </Typography>
-        <Typography variant="body1" color="white" sx={{ textAlign: "justify" }}>
+        <Typography variant="body1" color="white" sx={{ textAlign: "justify" }} fontFamily="Raleway">
           Greetings! I'm Kanishk Sharma, a passionate software developer
           currently pursuing a Master's in Computer Science from Arizona State
           University. With a fervor for blockchains, digital forensics, and web3
@@ -125,14 +147,13 @@ function About() {
       </div>
       <div
         style={{
-          backgroundColor: "transparent",
-          border: "3px solid white",
-          borderRadius: "20px",
-          marginTop: "5.5%",
-          padding: "3.8%",
+          ...sectionStyles.base,
+          height: "fit-content", // Adjust height based on content
         }}
+        onMouseEnter={(e) => applyHover(e, true)}
+        onMouseLeave={(e) => applyHover(e, false)}
       >
-        <Typography variant="h4" color="white" align="center" gutterBottom>
+        <Typography variant="h4" color="white" align="center" gutterBottom fontFamily="Raleway">
           Skills
         </Typography>
         <div
@@ -157,12 +178,11 @@ function About() {
       </div>
       <div
         style={{
-          backgroundColor: "transparent",
-          border: "3px solid white",
-          borderRadius: "20px",
-          marginTop: "5.5%",
-          padding: "3.8%",
+          ...sectionStyles.base,
+          height: "fit-content", // Adjust height based on content
         }}
+        onMouseEnter={(e) => applyHover(e, true)}
+        onMouseLeave={(e) => applyHover(e, false)}
       >
         <Typography
           variant="h4"
@@ -171,6 +191,8 @@ function About() {
             "&.MuiTypography-root": {
               fontSize: "1.7rem", // Default font size for title
               marginBottom: "2.5%",
+              fontFamily: "Raleway",
+              textAlign: "center",
               "@media (max-width:600px)": {
                 fontSize: "1rem", // Adjust font size for smaller screens
               },
@@ -179,7 +201,7 @@ function About() {
         >
           My Resume
         </Typography>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <Button
             size="small"
             sx={{
@@ -195,7 +217,7 @@ function About() {
             className="downloadbutton"
           >
             <VisibilityOutlinedIcon style={{ marginRight: "8px" }} />
-            <Typography variant="body1">View Resume</Typography>
+            <Typography variant="body1" fontFamily="Raleway">View Resume</Typography>
           </Button>
           <Button
             size="small"
@@ -212,7 +234,7 @@ function About() {
             className="downloadbutton"
           >
             <DownloadOutlinedIcon style={{ marginRight: "8px" }} />
-            <Typography variant="body1">Download Resume</Typography>
+            <Typography variant="body1" fontFamily="Raleway">Download Resume</Typography>
           </Button>
         </div>
       </div>
