@@ -102,16 +102,21 @@ function About() {
     },
   ];
 
-  const resumePdfUrl = "./Resume.pdf";
+  const resumePdfUrl = process.env.PUBLIC_URL + "/Resume.pdf";
 
   const openResume = () => {
-    window.open(resumePdfUrl, "_blank");
+    const newTab = window.open("", "_blank");
+    if (newTab) {
+      newTab.location.href = resumePdfUrl;
+    } else {
+      console.error("Popup blocked; please allow popups to view the resume.");
+    }
   };
 
   const downloadResume = () => {
     const link = document.createElement("a");
     link.href = resumePdfUrl;
-    link.download = "Kanishk_Sharma_Resume.pdf";
+    link.download = `Kanishk Sharma's Resume.pdf`;
     link.click();
   };
 
