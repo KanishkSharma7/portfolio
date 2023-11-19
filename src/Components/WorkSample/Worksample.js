@@ -6,6 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Button from "@mui/material/Button";
 import { Grid } from '@mui/material';
+import { Container } from "@mui/system";
 
 function WorkSample() {
   const [expanded, setExpanded] = useState("work_1");
@@ -73,7 +74,7 @@ function WorkSample() {
     },
   ];
   return (
-    <>
+    <Container>
       <div
         style={{
           backgroundColor: "transaparent",
@@ -158,7 +159,7 @@ function WorkSample() {
           ))}
         </div>
       </div>
-    </>
+    </Container>
   );
 }
 

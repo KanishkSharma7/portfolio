@@ -4,6 +4,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Container } from "@mui/system";
 
 function Acadprojs() {
   const [expanded, setExpanded] = useState("work_1");
@@ -36,82 +37,86 @@ function Acadprojs() {
     // },
   ];
   return (
-    <div
-      style={{
-        backgroundColor: "transparent",
-        border: "3px solid white",
-        borderRadius: "20px",
-        marginTop: "5.5%",
-        padding: "5%",
-      }}
-    >
-      <Typography
-        variant="h4"
-        color="white"
-        sx={{
-          "&.MuiTypography-root": {
-            fontSize: "1.8rem", // Default font size for title
-            "@media (max-width:600px)": {
-              fontSize: "1rem", // Adjust font size for smaller screens
-            },
-          },
+    <Container>
+      <div
+        style={{
+          backgroundColor: "transparent",
+          border: "3px solid white",
+          borderRadius: "20px",
+          marginTop: "5.5%",
+          padding: "5%",
         }}
       >
-        My Academic Projects!
-      </Typography>
-      <div>
-        {academic_projects.map((experience, index) => (
-          <Accordion
-            key={experience.id}
-            expanded={expanded === experience.id}
-            onChange={handleChange(experience.id)}
-            sx={{
-              backgroundColor: "transparent",
-              border: "3px solid white",
-              marginTop: "3%",
-              borderRadius: "20px",
-              padding: "2%",
-              ":first-of-type": {
-                borderTopLeftRadius: "20px",
-                borderTopRightRadius: "20px",
+        <Typography
+          variant="h4"
+          color="white"
+          sx={{
+            "&.MuiTypography-root": {
+              fontSize: "1.8rem", // Default font size for title
+              "@media (max-width:600px)": {
+                fontSize: "1rem", // Adjust font size for smaller screens
               },
-              ":last-of-type": {
-                borderBottomLeftRadius:
-                  index === academic_projects.length - 1 ? "20px" : 0,
-                borderBottomRightRadius:
-                  index === academic_projects.length - 1 ? "20px" : 0,
-              },
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-              aria-controls={`${experience.id}-dates`}
-              id={`${experience.id}-header`}
+            },
+          }}
+        >
+          My Academic Projects!
+        </Typography>
+        <div>
+          {academic_projects.map((experience, index) => (
+            <Accordion
+              key={experience.id}
+              expanded={expanded === experience.id}
+              onChange={handleChange(experience.id)}
+              sx={{
+                backgroundColor: "transparent",
+                border: "3px solid white",
+                marginTop: "3%",
+                borderRadius: "20px",
+                padding: "2%",
+                ":first-of-type": {
+                  borderTopLeftRadius: "20px",
+                  borderTopRightRadius: "20px",
+                },
+                ":last-of-type": {
+                  borderBottomLeftRadius:
+                    index === academic_projects.length - 1 ? "20px" : 0,
+                  borderBottomRightRadius:
+                    index === academic_projects.length - 1 ? "20px" : 0,
+                },
+              }}
             >
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <Typography
-                  color="white"
-                  variant="h6"
-                  sx={{
-                    "&.MuiTypography-root": {
-                      fontSize: "1.2rem", // Default font size for title
-                      "@media (max-width:600px)": {
-                        fontSize: "0.85rem", // Adjust font size for smaller screens
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
+                aria-controls={`${experience.id}-dates`}
+                id={`${experience.id}-header`}
+              >
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <Typography
+                    color="white"
+                    variant="h6"
+                    sx={{
+                      "&.MuiTypography-root": {
+                        fontSize: "1.2rem", // Default font size for title
+                        "@media (max-width:600px)": {
+                          fontSize: "0.85rem", // Adjust font size for smaller screens
+                        },
                       },
-                    },
-                  }}
-                >
-                  {experience.title}
+                    }}
+                  >
+                    {experience.title}
+                  </Typography>
+                </div>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography color="white" sx={{ textAlign: "justify" }}>
+                  {experience.description}
                 </Typography>
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography color="white" sx= {{ textAlign: "justify" }}>{experience.description}</Typography>
-            </AccordionDetails>
-          </Accordion>
-        ))}
+              </AccordionDetails>
+            </Accordion>
+          ))}
+        </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

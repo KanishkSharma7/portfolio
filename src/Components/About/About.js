@@ -43,8 +43,11 @@ function About() {
           backgroundColor: "transparent",
           border: "3px solid white",
           borderRadius: "20px",
-          marginTop: "5.5%",
           padding: "5%",
+          height: "100%", // Set a fixed height to match Contact component
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
         }}
       >
         <Typography

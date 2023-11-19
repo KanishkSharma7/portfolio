@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Container, Grid, CssBaseline } from "@mui/material";
 import Contact from "./Components/Contact Card/Contact";
 import About from "./Components/About/About";
@@ -5,6 +6,7 @@ import Experience from "./Components/Experience/Experience";
 import WorkSample from "./Components/WorkSample/Worksample";
 import Acadprojs from "./Components/AcadProjs/Acadprojs";
 import Navbar from "./Components/Navbar/Navbar";
+import PersonalInfo from "./Components/Personal Information/PersonalInfo";
 
 function App() {
   const scrollToSection = (id) => {
@@ -20,33 +22,18 @@ function App() {
   };
 
   return (
-    <div className="App" >
-      <CssBaseline />
-      <Navbar scrollToSection={scrollToSection} />
-
-      <Container id="contact" height="100%">
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={5}>
-            <Contact />
-          </Grid>
-          <Grid item xs={12} sm={6} md={7} marginBottom="2%">
-            <About />
-          </Grid>
-        </Grid>
-      </Container>
-
-      <Container id="experience" >
-        <Experience />
-      </Container>
-
-      <Container id="worksample" >
-        <WorkSample />
-      </Container>
-
-      <Container id="academicprojects" >
-        <Acadprojs />
-      </Container>
-    </div>
+    <Router>
+      <div className="App">
+        <CssBaseline />
+        <Navbar />
+        <Routes>
+          <Route path="/portfolio" element={<PersonalInfo />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/worksample" element={<WorkSample />} />
+          <Route path="/academicprojects" element={<Acadprojs />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

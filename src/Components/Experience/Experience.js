@@ -1,15 +1,27 @@
-import { Typography } from "@mui/material";
+import {
+  Typography,
+  Card,
+  CardContent,
+  Collapse,
+  Grid,
+  IconButton,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
-import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
+import { Container } from "@mui/system";
+import Timeline from "@mui/lab/Timeline";
+import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineDot from "@mui/lab/TimelineDot";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import TestimonialSlider from "../Testimonials/Testimonials";
 
 function Experience() {
-  const [expanded, setExpanded] = useState("work_1");
+  const [expanded, setExpanded] = useState(null);
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
+  const handleExpand = (panel) => {
+    setExpanded(expanded === panel ? null : panel);
   };
 
   const [isMobile, setIsMobile] = useState(false);
@@ -55,109 +67,83 @@ function Experience() {
     },
   ];
   return (
-    <div
-      style={{
-        backgroundColor: "transparent",
-        border: "3px solid white",
-        borderRadius: "20px",
-        marginTop: "5.5%",
-        padding: "5%",
-      }}
-    >
+    <Container>
       <Typography
-        variant="h4"
+        variant="h3"
         color="white"
-        sx={{
-          "&.MuiTypography-root": {
-            fontSize: "1.8rem", // Default font size for title
-            "@media (max-width:600px)": {
-              fontSize: "1rem", // Adjust font size for smaller screens
-            },
-          },
-        }}
+        sx={{ textAlign: "center", marginBottom: "5%" }}
       >
-        Professional Experience
+        Work Experience
       </Typography>
-      <div>
+      <Timeline position="alternate">
         {work_experience.map((experience, index) => (
-          <Accordion
-            key={experience.id}
-            expanded={expanded === experience.id}
-            onChange={handleChange(experience.id)}
-            sx={{
-              backgroundColor: "transparent",
-              border: "3px solid white",
-              marginTop: "3%",
-              borderRadius: "20px",
-              padding: "2%",
-              "&:first-of-type": {
-                borderTopLeftRadius: "20px",
-                borderTopRightRadius: "20px",
-              },
-              "&:last-of-type": {
-                borderBottomLeftRadius:
-                  index === work_experience.length - 1 ? "20px" : 0,
-                borderBottomRightRadius:
-                  index === work_experience.length - 1 ? "20px" : 0,
-              },
-              "& .MuiTypography-root": {
-                color: "white",
-                "&.title": {
-                  fontSize: "1.2rem", // Default font size for title
-                  "@media (max-width:600px)": {
-                    fontSize: "0.7rem", // Adjust font size for smaller screens
-                  },
-                },
-                "&.dates": {
-                  fontSize: "1rem", // Default font size for dates
-                  "@media (max-width:600px)": {
-                    fontSize: "0.6rem", // Adjust font size for smaller screens
-                  },
-                },
-                "&.desc": {
-                  fontSize: "1rem", // Default font size for dates
-                  "@media (max-width:600px)": {
-                    fontSize: "1rem", // Adjust font size for smaller screens
-                  },
-                },
-              },
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-              aria-controls={`${experience.id}-dates`}
-              id={`${experience.id}-header`}
-            >
-              <div
-                style={{
+          <TimelineItem key={experience.id}>
+            <TimelineSeparator>
+              <TimelineDot />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent sx={{ flex: 1 }}>
+              <Card
+                sx={{
+                  border: "3px solid white",
+                  borderRadius: "20px",
+                  backgroundColor: "transparent",
                   display: "flex",
+                  flexDirection: "column",
                   justifyContent: "space-between",
-                  alignItems: "center",
-                  width: "100%",
-                  flexDirection: isMobile ? "column" : "row",
                 }}
               >
-                <div>
-                  <Typography className="title" variant="h6">
-                    {experience.title}
-                  </Typography>
+                <CardContent>
+                  <div>
+                    <Typography
+                      variant="h6"
+                      color="white"
+                      sx={{ textAlign: "left" }}
+                    >
+                      {experience.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="white"
+                      sx={{ marginBottom: "8px", textAlign: "left" }}
+                    >
+                      {experience.dates}
+                    </Typography>
+                    <Collapse
+                      in={expanded === experience.id}
+                      timeout="auto"
+                      unmountOnExit
+                    >
+                      <Typography color="white" sx={{ textAlign: "justify" }}>
+                        {experience.description}
+                      </Typography>
+                    </Collapse>
+                  </div>
+                </CardContent>
+                <div
+                  style={{
+                    alignSelf: "flex-end",
+                    marginRight: "8px",
+                    marginBottom: "8px",
+                  }}
+                >
+                  <IconButton
+                    sx={{
+                      color: "white",
+                    }}
+                    onClick={() => handleExpand(experience.id)}
+                  >
+                    <ExpandMoreIcon />
+                  </IconButton>
                 </div>
-                <div>
-                  <Typography className="dates" variant="body2">
-                    {experience.dates}
-                  </Typography>
-                </div>
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography className="desc" color="white" sx= {{ textAlign: "justify" }}>
-                {experience.description}
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+              </Card>
+            </TimelineContent>
+          </TimelineItem>
         ))}
-      </div>
-    </div>
+      </Timeline>
+
+      <TestimonialSlider />
+    </Container>
   );
 }
 

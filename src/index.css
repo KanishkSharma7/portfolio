@@ -5,9 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('./wallpaper.jpeg') ;
-  background-size: contain;
-  background-attachment: fixed;
+  background: black !important; /* Set the background color to black */
 }
 
 code {
