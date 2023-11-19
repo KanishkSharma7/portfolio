@@ -8,9 +8,6 @@ import Typography from "@mui/material/Typography";
 function PersonalInfo() {
   return (
     <Container>
-      {/* <Typography color="white" variant="h3" gutterBottom align="center" >
-        About Me
-      </Typography> */}
       <Grid
         container
         justifyContent="center"

@@ -63,55 +63,93 @@ function Contact() {
           }}
           alt="profile pic"
         />
-        <Typography
-          variant="h5"
-          color="white"
-          gutterBottom
-          style={{ textAlign: "left" }}
-        >
-          Kanishk Sharma
-        </Typography>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            marginBottom: "10px",
-          }}
-        >
-          <LocationOnIcon style={{ color: "white", marginRight: "10px" }} />
-          <Typography variant="body1" color="white">
-            Tempe, AZ, USA
+        <div style={{ marginTop: "11%" }}>
+          <Typography
+            variant="h5"
+            color="white"
+            gutterBottom
+            style={{ textAlign: "left", fontSize: "3.5rem" }}
+          >
+            Kanishk Sharma
           </Typography>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            marginBottom: "10px",
-          }}
-        >
-          <PhoneIcon style={{ color: "white", marginRight: "10px" }} />
-          <Typography variant="body1" color="white">
-            (623)-698-5877
-          </Typography>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            marginBottom: "20px",
-          }}
-        >
-          <EmailIcon style={{ color: "white", marginRight: "10px" }} />
-          <Typography variant="body1" color="white">
-            ksharm72@asu.edu
-          </Typography>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              marginBottom: "10px",
+            }}
+          >
+            <LocationOnIcon
+              style={{
+                color: "white",
+                marginRight: "10px",
+                fontSize: "1.5rem",
+              }}
+            />
+            <Typography
+              variant="body1"
+              color="white"
+              style={{ fontSize: "1.5rem" }}
+            >
+              Tempe, AZ, USA
+            </Typography>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              marginBottom: "10px",
+            }}
+          >
+            <PhoneIcon
+              style={{
+                color: "white",
+                marginRight: "10px",
+                fontSize: "1.5rem",
+              }}
+            />
+            <Typography
+              variant="body1"
+              color="white"
+              style={{ fontSize: "1.5rem" }}
+            >
+              (623)-698-5877
+            </Typography>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              marginBottom: "20px",
+            }}
+          >
+            <EmailIcon
+              style={{
+                color: "white",
+                marginRight: "10px",
+                fontSize: "1.5rem",
+              }}
+            />
+            <Typography
+              variant="body1"
+              color="white"
+              style={{ fontSize: "1.5rem" }}
+            >
+              ksharm72@asu.edu
+            </Typography>
+          </div>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "flex-start" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            marginTop: "5%",
+          }}
+        >
           <Button
             size="small"
             sx={githubButtonStyles}

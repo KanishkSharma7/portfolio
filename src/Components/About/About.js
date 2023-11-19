@@ -3,6 +3,14 @@ import React from "react";
 import Button from "@mui/material/Button";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import react_img from "../../Images/react.jpeg";
+import node_img from "../../Images/node.jpeg";
+import mongo_img from "../../Images/Mongodb.jpeg";
+import python_img from "../../Images/python.jpeg";
+import javascript_img from "../../Images/jsjs.jpeg";
+import c_image from "../../Images/C.jpeg";
+import etheruem_img from "../../Images/Ethereum.jpeg";
+import github_img from "../../Images/GitHub.jpeg";
 
 function About() {
   const buttonStyles = {
@@ -23,7 +31,43 @@ function About() {
     },
   };
 
-  const resumePdfUrl = "./Resume.pdf"; // Replace with the actual path
+  const skillsData = [
+    {
+      name: "MongoDB",
+      image: mongo_img,
+    },
+    {
+      name: "React JS",
+      image: react_img,
+    },
+    {
+      name: "Node JS",
+      image: node_img,
+    },
+    {
+      name: "Python",
+      image: python_img,
+    },
+    {
+      name: "JavaScript",
+      image: javascript_img,
+    },
+    {
+      name: "C plus",
+      image: c_image,
+    },
+    {
+      name: "Ethereum",
+      image: etheruem_img,
+    },
+    {
+      name: "Github",
+      image: github_img,
+    },
+    // Add other skills in the same format
+  ];
+
+  const resumePdfUrl = "./Resume.pdf";
 
   const openResume = () => {
     window.open(resumePdfUrl, "_blank");
@@ -54,6 +98,7 @@ function About() {
           color="white"
           variant="h4"
           marginBottom="2.5%"
+          align="center"
           sx={{
             "&.MuiTypography-root": {
               fontSize: "1.8rem", // Default font size for title
@@ -71,12 +116,7 @@ function About() {
           currently pursuing a Master's in Computer Science from Arizona State
           University. With a fervor for blockchains, digital forensics, and web3
           development, I am dedicated to honing my skills in software
-          development. My diverse expertise includes programming languages such
-          as Python, C++, JavaScript, and Solidity, along with proficiency in
-          web development technologies like React JS, Express JS, Node JS, and
-          Django. Diving into databases such as MySQL, NoSQL, and MongoDB, I'm
-          well-versed in tools like Git, AWS, VScode, Figma, Adobe XD, and
-          Linux. Professional experiences have fine-tuned my abilities,
+          development. Professional experiences have fine-tuned my abilities,
           particularly in web and e-commerce development, as well as successful
           ventures into crafting NFT marketplaces using Solidity. Connect with
           me on LinkedIn or explore my GitHub to delve deeper into my technical
@@ -92,11 +132,41 @@ function About() {
           padding: "3.8%",
         }}
       >
+        <Typography variant="h4" color="white" align="center" gutterBottom>
+          Skills
+        </Typography>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(80px, 1fr))",
+            gap: "20px",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "5%"
+          }}
+        >
+          {skillsData.map((skill) => (
+            <img
+              key={skill.name}
+              src={skill.image}
+              alt={skill.name}
+              style={{ height: "50px", width: "50px", borderRadius: "50%" }}
+            />
+          ))}
+        </div>
+      </div>
+      <div
+        style={{
+          backgroundColor: "transparent",
+          border: "3px solid white",
+          borderRadius: "20px",
+          marginTop: "5.5%",
+          padding: "3.8%",
+        }}
+      >
         <Typography
           variant="h4"
           color="white"
-          
-          
           sx={{
             "&.MuiTypography-root": {
               fontSize: "1.7rem", // Default font size for title

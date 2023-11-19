@@ -16,6 +16,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import TestimonialSlider from "../Testimonials/Testimonials";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 function Experience() {
   const [expanded, setExpanded] = useState(null);
@@ -82,7 +83,7 @@ function Experience() {
               <TimelineDot />
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent sx={{ flex: 1 }}>
+            <TimelineContent sx={{ flex: 1, position: "relative" }}>
               <Card
                 sx={{
                   border: "3px solid white",
@@ -94,48 +95,68 @@ function Experience() {
                 }}
               >
                 <CardContent>
-                  <div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
                     <Typography
                       variant="h6"
                       color="white"
-                      sx={{ textAlign: "left" }}
+                      sx={{ textAlign: "left", marginRight: "8px" }}
                     >
                       {experience.title}
                     </Typography>
-                    <Typography
-                      variant="body2"
-                      color="white"
-                      sx={{ marginBottom: "8px", textAlign: "left" }}
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginRight: "8px",
+                      }}
                     >
-                      {experience.dates}
-                    </Typography>
-                    <Collapse
-                      in={expanded === experience.id}
-                      timeout="auto"
-                      unmountOnExit
-                    >
-                      <Typography color="white" sx={{ textAlign: "justify" }}>
-                        {experience.description}
-                      </Typography>
-                    </Collapse>
+                      <Collapse
+                        in={expanded === experience.id}
+                        timeout="auto"
+                        unmountOnExit
+                      >
+                        <IconButton
+                          sx={{
+                            color: "white",
+                            "&:hover": {
+                              backgroundColor: "white",
+                              color: "black",
+                            },
+                          }}
+                          onClick={() => handleExpand(experience.id)}
+                        >
+                          {expanded === experience.id ? (
+                            <ExpandLessIcon />
+                          ) : (
+                            <ExpandMoreIcon />
+                          )}
+                        </IconButton>
+                      </Collapse>
+                    </div>
                   </div>
-                </CardContent>
-                <div
-                  style={{
-                    alignSelf: "flex-end",
-                    marginRight: "8px",
-                    marginBottom: "8px",
-                  }}
-                >
-                  <IconButton
-                    sx={{
-                      color: "white",
-                    }}
-                    onClick={() => handleExpand(experience.id)}
+                  <Typography
+                    variant="body2"
+                    color="white"
+                    sx={{ marginBottom: "8px", textAlign: "left" }}
                   >
-                    <ExpandMoreIcon />
-                  </IconButton>
-                </div>
+                    {experience.dates}
+                  </Typography>
+                  <Collapse
+                    in={expanded === experience.id}
+                    timeout="auto"
+                    unmountOnExit
+                  >
+                    <Typography color="white" sx={{ textAlign: "justify" }}>
+                      {experience.description}
+                    </Typography>
+                  </Collapse>
+                </CardContent>
               </Card>
             </TimelineContent>
           </TimelineItem>

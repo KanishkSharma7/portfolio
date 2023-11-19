@@ -6,24 +6,24 @@ import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 const testimonials = [
   {
     id: 1,
-    quote: "Great experience! The service provided exceeded my expectations.",
-    name: "John Doe",
+    quote: "Kanishk and his team skillfully managed the development of our website, navigating challenging tasks such as creating a user interface with intricate 3D representation of bike models and dynamic, sophisticated animations. Their commitment ensured timely delivery, and Kanishk's exceptional work with the anti-spam API showcased remarkable precision and expertise.",
+    name: "Shailendra, Suzuki Motorcycles India",
   },
   {
     id: 2,
-    quote: "Outstanding work! The team was highly professional and skilled.",
-    name: "Jane Smith",
+    quote: "Exceptional performance! Kanishk is a dedicated and meticulous software developer who surpassed expectations. All tasks were completed promptly and with precision. His stellar communication skills further enriched the process. Overall, I highly recommend Kanishk as a proficient software developer.",
+    name: "Shashank Sharma, CEO, DtoC Launchpad",
   },
-  {
-    id: 3,
-    quote: "Exceptional service and quality. Would highly recommend!",
-    name: "Alex Johnson",
-  },
-  {
-    id: 4,
-    quote: "Impressed by the dedication and attention to detail.",
-    name: "Emily Brown",
-  },
+  // {
+  //   id: 3,
+  //   quote: "Exceptional service and quality. Would highly recommend!",
+  //   name: "Alex Johnson",
+  // },
+  // {
+  //   id: 4,
+  //   quote: "Impressed by the dedication and attention to detail.",
+  //   name: "Emily Brown",
+  // },
 ];
 
 const TestimonialSlider = () => {
@@ -51,7 +51,7 @@ const TestimonialSlider = () => {
         color="white"
         sx={{ textAlign: "center", marginTop: "5%", marginBottom: "2.5%" }}
       >
-        Testimonials
+        Client Testimonials
       </Typography>
       <div style={{ display: "flex", alignItems: "center" }}>
         <IconButton
@@ -67,7 +67,7 @@ const TestimonialSlider = () => {
               <Card
                 sx={{
                   height: "100%",
-                  backgroundColor: "black",
+                  backgroundColor: "transparent",
                   border: "2px solid white",
                   borderRadius: "20px",
                   display: "flex",
@@ -75,13 +75,17 @@ const TestimonialSlider = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <CardContent>
-                  <Typography variant="body1" color="white">
-                    {testimonial.quote}
-                  </Typography>
-                  <Typography variant="subtitle2" color="white">
-                    - {testimonial.name}
-                  </Typography>
+                <CardContent sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                  <div>
+                    <Typography variant="body1" color="white">
+                      {testimonial.quote}
+                    </Typography>
+                  </div>
+                  <div style={{ marginTop: "auto" }}>
+                    <Typography variant="subtitle2" color="white">
+                      - {testimonial.name}
+                    </Typography>
+                  </div>
                 </CardContent>
               </Card>
             </Grid>
