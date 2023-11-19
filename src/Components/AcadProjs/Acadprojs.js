@@ -50,6 +50,8 @@ function Acadprojs() {
         <Typography
           variant="h4"
           color="white"
+          textAlign="center"
+          marginBottom="2%"
           sx={{
             "&.MuiTypography-root": {
               fontSize: "1.8rem", // Default font size for title

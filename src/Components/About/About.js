@@ -11,6 +11,8 @@ import javascript_img from "../../Images/jsjs.jpeg";
 import c_image from "../../Images/C.jpeg";
 import etheruem_img from "../../Images/Ethereum.jpeg";
 import github_img from "../../Images/GitHub.jpeg";
+import aws_img from "../../Images/AWS.jpeg";
+import blockchain_img from "../../Images/blokchcain.jpeg";
 
 function About() {
   const buttonStyles = {
@@ -43,7 +45,7 @@ function About() {
     },
     hover: {
       transform: "scale(1.0025)",
-      boxShadow: "0px 0px 20px 0px rgba(255, 255, 255, 0.4)",
+      boxShadow: "0px 0px 20px 0px rgba(255, 255, 255, 0.)",
     },
   };
 
@@ -58,18 +60,6 @@ function About() {
 
   const skillsData = [
     {
-      name: "MongoDB",
-      image: mongo_img,
-    },
-    {
-      name: "React JS",
-      image: react_img,
-    },
-    {
-      name: "Node JS",
-      image: node_img,
-    },
-    {
       name: "Python",
       image: python_img,
     },
@@ -82,6 +72,19 @@ function About() {
       image: c_image,
     },
     {
+      name: "MongoDB",
+      image: mongo_img,
+    },
+    {
+      name: "React JS",
+      image: react_img,
+    },
+    {
+      name: "Node JS",
+      image: node_img,
+    },
+
+    {
       name: "Ethereum",
       image: etheruem_img,
     },
@@ -89,7 +92,14 @@ function About() {
       name: "Github",
       image: github_img,
     },
-    // Add other skills in the same format
+    {
+      name: "AWS",
+      image: aws_img,
+    },
+    {
+      name: "Blockchain",
+      image: blockchain_img,
+    },
   ];
 
   const resumePdfUrl = "./Resume.pdf";
@@ -104,7 +114,7 @@ function About() {
     link.download = "Kanishk_Sharma_Resume.pdf";
     link.click();
   };
-  
+
   return (
     <>
       <div
@@ -133,7 +143,12 @@ function About() {
         >
           About Me
         </Typography>
-        <Typography variant="body1" color="white" sx={{ textAlign: "justify" }} fontFamily="Raleway">
+        <Typography
+          variant="body1"
+          color="white"
+          sx={{ textAlign: "justify" }}
+          fontFamily="Raleway"
+        >
           Greetings! I'm Kanishk Sharma, a passionate software developer
           currently pursuing a Master's in Computer Science from Arizona State
           University. With a fervor for blockchains, digital forensics, and web3
@@ -153,7 +168,13 @@ function About() {
         onMouseEnter={(e) => applyHover(e, true)}
         onMouseLeave={(e) => applyHover(e, false)}
       >
-        <Typography variant="h4" color="white" align="center" gutterBottom fontFamily="Raleway">
+        <Typography
+          variant="h4"
+          color="white"
+          align="center"
+          gutterBottom
+          fontFamily="Raleway"
+        >
           Skills
         </Typography>
         <div
@@ -163,7 +184,7 @@ function About() {
             gap: "20px",
             justifyContent: "center",
             alignItems: "center",
-            marginTop: "5%"
+            marginTop: "5%",
           }}
         >
           {skillsData.map((skill) => (
@@ -217,7 +238,9 @@ function About() {
             className="downloadbutton"
           >
             <VisibilityOutlinedIcon style={{ marginRight: "8px" }} />
-            <Typography variant="body1" fontFamily="Raleway">View Resume</Typography>
+            <Typography variant="body1" fontFamily="Raleway">
+              View Resume
+            </Typography>
           </Button>
           <Button
             size="small"
@@ -234,7 +257,9 @@ function About() {
             className="downloadbutton"
           >
             <DownloadOutlinedIcon style={{ marginRight: "8px" }} />
-            <Typography variant="body1" fontFamily="Raleway">Download Resume</Typography>
+            <Typography variant="body1" fontFamily="Raleway">
+              Download Resume
+            </Typography>
           </Button>
         </div>
       </div>

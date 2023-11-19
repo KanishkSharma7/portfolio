@@ -7,23 +7,26 @@ import PersonalInfo from "./Components/Personal Information/PersonalInfo";
 import Experience from "./Components/Experience/Experience";
 import WorkSample from "./Components/WorkSample/Worksample";
 import Homepage from "./Components/Homepage/Homepage";
+import Scrollbar from "./Components/CustomScrollbar/Scrollbar"; // Import your custom scrollbar component
 
 function App() {
   return (
     <Router>
-      <div className="App" style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-        <CssBaseline />
-        <Navbar />
-        <div style={{ flex: 1 }}>
-          <Routes>
-            <Route path="/portfolio" element={<Homepage />} />
-            <Route path="/about" element={<PersonalInfo />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/worksample" element={<WorkSample />} />
-          </Routes>
+      <Scrollbar>
+        <div className="App" style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+          <CssBaseline />
+          <Navbar />
+          <div style={{ flex: 1 }}>
+            <Routes>
+              <Route path="/portfolio" element={<Homepage />} />
+              <Route path="/about" element={<PersonalInfo />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="/worksample" element={<WorkSample />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </Scrollbar>
     </Router>
   );
 }

@@ -6,12 +6,14 @@ import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 const testimonials = [
   {
     id: 1,
-    quote: "Kanishk and his team skillfully managed the development of our website, navigating challenging tasks such as creating a user interface with intricate 3D representation of bike models and dynamic, sophisticated animations. Their commitment ensured timely delivery, and Kanishk's exceptional work with the anti-spam API showcased remarkable precision and expertise.",
+    quote:
+      "Kanishk and his team skillfully managed the development of our website, navigating challenging tasks such as creating a user interface with intricate 3D representation of bike models and dynamic, sophisticated animations. Their commitment ensured timely delivery, and Kanishk's exceptional work with the anti-spam API showcased remarkable precision and expertise.",
     name: "Shailendra, Suzuki Motorcycles India",
   },
   {
     id: 2,
-    quote: "Exceptional performance! Kanishk is a dedicated and meticulous software developer who surpassed expectations. All tasks were completed promptly and with precision. His stellar communication skills further enriched the process. Overall, I highly recommend Kanishk as a proficient software developer.",
+    quote:
+      "Exceptional performance! Kanishk is a dedicated and meticulous software developer who surpassed expectations. All tasks were completed promptly and with precision. His stellar communication skills further enriched the process. Overall, I highly recommend Kanishk as a proficient software developer.",
     name: "Shashank Sharma, CEO, DtoC Launchpad",
   },
   // {
@@ -74,16 +76,36 @@ const TestimonialSlider = () => {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
+                  transition: "transform 0.3s, box-shadow 0.3s", // Add transition for a smooth effect
+                  "&:hover": {
+                    transform: "scale(1.05)", // Scale up the card on hover
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Add a slight shadow on hover
+                  },
                 }}
               >
-                <CardContent sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <CardContent
+                  sx={{
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
                   <div>
-                    <Typography variant="body1" color="white" fontFamily="Raleway">
+                    <Typography
+                      variant="body1"
+                      color="white"
+                      fontFamily="Raleway"
+                    >
                       {testimonial.quote}
                     </Typography>
                   </div>
                   <div style={{ marginTop: "auto" }}>
-                    <Typography variant="subtitle2" color="white" fontFamily="Raleway">
+                    <Typography
+                      variant="subtitle2"
+                      color="white"
+                      fontFamily="Raleway"
+                    >
                       - {testimonial.name}
                     </Typography>
                   </div>

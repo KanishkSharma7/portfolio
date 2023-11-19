@@ -58,7 +58,7 @@ const Navbar = () => {
           edge="start"
           color="inherit"
           onClick={toggleDrawer(true)}
-          sx={{ color: "white" }}
+          sx={{ color: "white", alignSelf: "flex-start" }}
         >
           <MenuIcon />
         </Button>
